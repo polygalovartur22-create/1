@@ -1,0 +1,157 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Для локальной разработки используйте:
+# local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # === КОЛЛЕКЦИЯ: УСЛУГИ ===
+  - name: "services"
+    label: "Услуги и цены"
+    folder: "data/services"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "slug"
+    summary: "{{fields.title}} — {{fields.price}} ₽"
+    fields:
+      - label: "URL-идентификатор (slug)"
+        name: "slug"
+        widget: "string"
+        hint: "Уникальный идентификатор услуги (например: lechenie-kariesa)"
+        pattern: ['^[a-z0-9-]+$', "Только строчные латинские буквы, цифры и дефис"]
+      
+      - label: "Название услуги"
+        name: "title"
+        widget: "string"
+      
+      - label: "Иконка (Font Awesome)"
+        name: "icon"
+        widget: "string"
+        default: "fas fa-tooth"
+        hint: "Класс иконки Font Awesome (например: fas fa-tooth)"
+      
+      - label: "Описание"
+        name: "description"
+        widget: "text"
+      
+      - label: "Цена"
+        name: "price"
+        widget: "string"
+        required: false
+        hint: "Оставьте пустым, если цена по запросу"
+      
+      - label: "Показывать бейдж"
+        name: "showBadge"
+        widget: "boolean"
+        default: false
+      
+      - label: "Текст бейджа"
+        name: "badgeText"
+        widget: "string"
+        required: false
+        hint: "Например: Бесплатно, Акция, Новинка"
+      
+      - label: "Порядок отображения"
+        name: "order"
+        widget: "number"
+        default: 0
+        hint: "Число для сортировки (меньше = выше)"
+
+  # === КОЛЛЕКЦИЯ: ВРАЧИ ===
+  - name: "doctors"
+    label: "Врачи"
+    folder: "data/doctors"
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "slug"
+    summary: "{{fields.name}} — {{fields.specialty}}"
+    fields:
+      - label: "URL-идентификатор (slug)"
+        name: "slug"
+        widget: "string"
+        hint: "Уникальный идентификатор врача (например: ivanov-ivan)"
+        pattern: ['^[a-z0-9-]+$', "Только строчные латинские буквы, цифры и дефис"]
+      
+      - label: "ФИО"
+        name: "name"
+        widget: "string"
+      
+      - label: "Должность/специальность"
+        name: "specialty"
+        widget: "string"
+      
+      - label: "Фотография"
+        name: "photo"
+        widget: "image"
+        required: false
+      
+      - label: "Описание/биография"
+        name: "description"
+        widget: "markdown"
+        required: false
+      
+      - label: "Стаж работы (лет)"
+        name: "experience"
+        widget: "number"
+        required: false
+      
+      - label: "Активен"
+        name: "active"
+        widget: "boolean"
+        default: true
+        hint: "Показывать ли врача на сайте"
+      
+      - label: "Порядок отображения"
+        name: "order"
+        widget: "number"
+        default: 0
+
+  # === ФАЙЛОВАЯ КОЛЛЕКЦИЯ: НОВОСТИ ===
+  - name: "news"
+    label: "Новости"
+    folder: "data/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{fields.date}} — {{fields.title}}"
+    fields:
+      - label: "Заголовок"
+        name: "title"
+        widget: "string"
+      
+      - label: "Дата"
+        name: "date"
+        widget: "datetime"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+      
+      - label: "Иконка"
+        name: "icon"
+        widget: "string"
+        default: "fas fa-newspaper"
+      
+      - label: "Краткое описание"
+        name: "excerpt"
+        widget: "text"
+      
+      - label: "Полный текст"
+        name: "content"
+        widget: "markdown"
+        required: false
+      
+      - label: "Порядок"
+        name: "order"
+        widget: "number"
+        default: 0

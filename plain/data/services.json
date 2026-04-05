@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "lechenie-kariesa",
+    "title": "Лечение кариеса",
+    "icon": "fas fa-tooth",
+    "description": "Современные методы лечения кариеса любой сложности с использованием качественных пломбировочных материалов.",
+    "price": "от 3 500 ₽",
+    "showBadge": false,
+    "badgeText": "",
+    "order": 1
+  },
+  {
+    "slug": "endodonticheskoe-lechenie",
+    "title": "Эндодонтическое лечение",
+    "icon": "fas fa-project-diagram",
+    "description": "Профессиональное лечение корневых каналов с применением современных технологий и микроскопа.",
+    "price": "от 5 000 ₽",
+    "showBadge": false,
+    "badgeText": "",
+    "order": 2
+  },
+  {
+    "slug": "professionalnaya-chistka",
+    "title": "Профессиональная чистка",
+    "icon": "fa-solid fa-shower",
+    "description": "Ультразвуковая чистка зубов, удаление зубного камня и налёта, полировка и фторирование.",
+    "price": "от 2 500 ₽",
+    "showBadge": false,
+    "badgeText": "",
+    "order": 3
+  },
+  {
+    "slug": "ultrazvukovoe-obsledovanie",
+    "title": "Ультразвуковое обследование",
+    "icon": "fa-solid fa-x-ray",
+    "description": "Диагностика состояния зубов и дёсен с помощью современного ультразвукового оборудования.",
+    "price": "от 1 500 ₽",
+    "showBadge": false,
+    "badgeText": "",
+    "order": 4
+  },
+  {
+    "slug": "assistirovannoe-lechenie",
+    "title": "Ассистированное лечение",
+    "icon": "fas fa-hands-helping",
+    "description": "Профессиональное ассистирование при проведении сложных стоматологических процедур.",
+    "price": "по запросу",
+    "showBadge": false,
+    "badgeText": "",
+    "order": 5
+  },
+  {
+    "slug": "konsultaciya-s-osmotrom",
+    "title": "Консультация с осмотром",
+    "icon": "fas fa-user-md",
+    "description": "Первичная бесплатная консультация с полным осмотром полости рта и составлением плана лечения.",
+    "price": "",
+    "showBadge": true,
+    "badgeText": "Бесплатно",
+    "order": 0
+  }
+]
